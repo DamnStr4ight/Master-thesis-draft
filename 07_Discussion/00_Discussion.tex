@@ -1,0 +1,28 @@
+\chapter{Discussion}
+
+- Did everything work as planned, could things been done better? 
+
+- could be easier to do it with RFID modules
+
+\section{One MCU per reader}
+
+As the design improved over the iterations, it became apparent that one might only need one AC for each coil, rather than two. This would allow for one ATtiny1617 to controll three reader circuits, drastically reducing the cost of the final solution. Unfortunately, this fact was not discovered until the final iteration was already in production, and there were no time left to try this hypothesis.
+
+Maybe say something about dynamic offset/ ADC as referance
+
+\section{De-tuning}
+
+De-tuning the non-active RFID readers could help mitigate the reduction in the range we see when a tuned coil is introduced into the field of an active reader. This could be accomplished by having an additional transistor in the circuit short circuiting the coil to ground, effectively de-tuning it. Some current will still be induced to the coil, but not nearly as much as before.
+
+\section{Size of the antenna coil}
+
+The size of the antenna greatly affects the reader distance, and also, as figure \ref{fig:06:3cmAppart} showed, a minimum of three centimetres are needed to get a consistently with the coils currently used. When puchased, the coils were listed as 32mm
+
+\section{Size of the board}
+
+\section{One driver coil for all 64 readers}
+
+\section{Prescalers}
+Mention tournament size
+
+Less noise

@@ -1,0 +1,179 @@
+\documentclass[pdftex,10pt,b5paper,twoside, oldfontcommands]{memoir}
+\usepackage[lmargin=25mm,rmargin=25mm,tmargin=27mm,bmargin=30mm]{geometry}
+
+
+
+
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+
+\usepackage[square,numbers,comma]{natbib}
+\bibliographystyle{abbrvnat}
+\usepackage{import}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[colorinlistoftodos]{todonotes} %change to [disable] to hide todos
+
+\usepackage[
+breaklinks=true,colorlinks=true,
+%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
+linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+\usepackage{geometry}
+\usepackage[geometry]{ifsym}
+\usepackage{scrextend}
+\usepackage{color,soul}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{diagbox}
+\usepackage{subcaption}
+%\addtokomafont{labelinglabel}{\sffamily}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+% PRINT
+%176 × 250	
+\geometry{total={176mm,250mm},
+left=20mm,right=20mm,
+bindingoffset=10mm, top=25mm,bottom=25mm}
+
+\OnehalfSpacing
+%\linespread{1.3}
+
+%%% CHAPTER'S STYLE
+%\chapterstyle{bianchi}
+%\chapterstyle{ger}
+%\chapterstyle{madsen}
+\chapterstyle{ell}
+%\chapterstyle{veelo}
+%%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
+\setsecheadstyle{\Large\bfseries\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
+\setsubsubsecheadstyle{\bfseries\sffamily\raggedright}
+
+
+%%% STYLE OF PAGES NUMBERING
+%\pagestyle{companion}\nouppercaseheads 
+%\pagestyle{headings}
+\pagestyle{Ruled}
+%\pagestyle{ruled}
+%\makepagestyle{ruled}
+%\makeevenfoot{plain}{\thepage}{}{}
+%\makeoddfoot{plain}{}{}{\thepage}
+%\makeevenhead{plain}{}{}{}
+%\makeoddhead{plain}{}{}{}
+
+
+\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
+\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+
+
+%%Vedlegg
+\usepackage{pdfpages}
+\usepackage{kantlipsum}
+%%
+
+
+
+
+
+
+\begin{document}
+\setlength{\parindent}{0em}
+%----------------------------------------------------------------------------------------
+%	Begin Document
+%----------------------------------------------------------------------------------------
+\pagenumbering{roman}
+\listoftodos
+\vfill
+\newpage
+\cleardoublepage
+
+
+\setcounter{page}{1}
+\import{General/}{Assignment.tex}
+\import{General/}{Preface.tex}
+\import{General/}{abstract.tex}
+\import{General/}{abstract_norwegian.tex}
+%\import{General/}{forord.tex}
+
+%\import{General/}{abstract.tex}
+\tableofcontents
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
+\import{General/}{ordforklaringer.tex}
+\newpage
+\pagenumbering{arabic}%switch on page numbering with arabic numbers
+
+%Chapter one
+\import{01_Introduction/}{00_introduction.tex}
+\import{01_Introduction/}{01_Background_For_This_Thesis.tex}
+\import{01_Introduction/}{02_Motivation.tex}
+\import{01_Introduction/}{03_Constraints.tex}
+%\import{01_Introduction/}{04_Contributions.tex}
+\import{01_Introduction/}{05_Disposition.tex}
+%End chapter one
+
+%Chapter two
+\import{02_Literature_study/}{00_Literature_Study.tex}
+\import{02_Literature_study/}{01_RFID.tex}
+\import{02_Literature_study/}{04_Radio_Frequency_Autorities.tex}
+\import{02_Literature_study/}{02_IoT.tex}
+\import{02_Literature_study/}{03_Current_Chess_Solutions.tex}
+
+\import{02_Literature_study/}{0k_Summary_Of_Litterature_Study.tex}
+%End chapter two
+
+%Chapter three
+\import{03_Theory/}{00_Theory.tex}
+\import{03_Theory/}{01_RFID.tex}
+\import{03_Theory/}{02_PCB_Design.tex}
+\import{03_Theory/}{03_Antennas.tex}
+\import{03_Theory/}{04_Forsyth-Edwards_Notation.tex}
+\import{03_Theory/}{05_MQTT.tex}
+%Chapter three end
+
+%Chapter four
+\import{04_My_Proposal_For_Solution/}{00_My_Proposal_For_Solution.tex}
+%End chapter four
+
+%Chapter five
+\import{05_My_Implementation/}{00_My_Implementation.tex}
+%End chapter five
+
+%Chapter six
+\import{06_My_Testing_Results/}{00_My_Testing_Results.tex}
+%End Chapter six
+
+%Chapter seven
+\import{07_Discussion/}{00_Discussion.tex}
+%End Chapter seven
+
+%Chapter eight
+\import{08_Conclusion/}{00_Conclusion.tex}
+%End chapter eight
+
+%Chapter nine
+\import{09_Future_Work/}{00_Future_Work.tex}
+\bibliography{General/references}
+\newpage %Hack for nice page numbering.
+\pagenumbering{Roman}
+\input{Vedlegg/vedlegg.tex}
+
+\end{document}
+
+
